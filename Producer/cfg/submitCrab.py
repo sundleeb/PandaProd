@@ -30,7 +30,7 @@ config.General.transferLogs = False
 ## JobType
 config.JobType.pluginName = 'Analysis'
 config.JobType.psetName = 'prod.py'
-#config.JobType.pyCfgParams=['isGrid=True','isData=False','isSignal=False']
+config.JobType.pyCfgParams=['config=Summer16']
 
 ### DATA configuration
 config.Data.inputDataset = '/HplusToTauNu-M500/amarini-amarini_PrivateMC_HPlusToTauNu_June2015-16aa19d591b8b49c55c4508e7a7c9233/USER'
@@ -42,7 +42,7 @@ config.Data.unitsPerJob = 10
 config.Data.totalUnits = -1
 
 config.Site.storageSite = 'T3_US_FNALLPC' 
-config.Data.outLFNDirBase = '/store/user/matteoc/pandaprod/80X' 
+config.Data.outLFNDirBase = '/store/user/mcremone/pandaprod/80X' 
 config.Data.publication = False
 config.Data.outputDatasetTag ='PandA'
 
@@ -121,7 +121,7 @@ if __name__ == '__main__':
 	#############################################################################################
 	## From now on that's what users should modify: this is the a-la-CRAB2 configuration part. ##
 	#############################################################################################
-	
+	'''
 	###################################################
 	setdata("True")
 	###################################################
@@ -173,8 +173,8 @@ if __name__ == '__main__':
 			'/SinglePhoton/Run2016H-PromptReco-v2/MINIAOD',
 			'/SinglePhoton/Run2016H-PromptReco-v3/MINIAOD',
 		])
-	'''
-	'''
+	
+        '''
 	###################################################
 	setdata("False")
 	###################################################
@@ -185,7 +185,7 @@ if __name__ == '__main__':
 			'/TTbarDMJets_pseudoscalar_Mchi-1_Mphi-100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6_ext1-v1/MINIAODSIM',
 	])
 	
-	
+	'''
 	###################################################
 	setdata("False")
 	config.Data.splitting = 'FileBased'
@@ -433,3 +433,4 @@ if __name__ == '__main__':
 			'/Vector_MonoTop_NLO_Mphi-1750_Mchi-500_gSM-0p25_gDM-1p0_13TeV-madgraph/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/MINIAODSIM',
 		])
 
+'''
