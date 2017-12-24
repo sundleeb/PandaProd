@@ -1,0 +1,19 @@
+DEBUG 2017-12-24 13:04:25,411: 	 Executing command: 'submit'
+DEBUG 2017-12-24 13:04:25,413: 	 Found CRAB cache file /uscms/home/matteoc/.crab3
+DEBUG 2017-12-24 13:04:25,425: 	 Checking credentials
+DEBUG 2017-12-24 13:04:25,426: 	 Found proxy file /tmp/x509up_u45169
+DEBUG 2017-12-24 13:04:25,426: 	 Getting proxy life time left
+DEBUG 2017-12-24 13:04:25,529: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u45169 -timeleft
+ output : 604771
+
+ error: 
+ retcode : 0
+DEBUG 2017-12-24 13:04:25,632: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u45169 -actimeleft
+ output : 604771
+
+ error: 
+ retcode : 0
+DEBUG 2017-12-24 13:04:25,632: 	 Proxy valid for 167:59:31 hours
+DEBUG 2017-12-24 13:04:25,633: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).

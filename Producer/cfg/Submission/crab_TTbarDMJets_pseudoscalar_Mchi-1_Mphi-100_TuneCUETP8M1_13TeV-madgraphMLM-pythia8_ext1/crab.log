@@ -1,0 +1,165 @@
+===> Summer16
+# Conditions read from  CMS_CONDITIONS  via FrontierProd 
+DEBUG 2017-12-24 13:40:00,988: 	 Executing command: 'submit'
+DEBUG 2017-12-24 13:40:00,992: 	 Found CRAB cache file /uscms/home/matteoc/.crab3
+DEBUG 2017-12-24 13:40:01,000: 	 Checking credentials
+DEBUG 2017-12-24 13:40:01,000: 	 Found proxy file /tmp/x509up_u45169
+DEBUG 2017-12-24 13:40:01,000: 	 Getting proxy life time left
+DEBUG 2017-12-24 13:40:01,103: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u45169 -timeleft
+ output : 602635
+
+ error: 
+ retcode : 0
+DEBUG 2017-12-24 13:40:01,206: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u45169 -actimeleft
+ output : 602635
+
+ error: 
+ retcode : 0
+DEBUG 2017-12-24 13:40:01,206: 	 Proxy valid for 167:23:55 hours
+DEBUG 2017-12-24 13:40:01,207: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2017-12-24 13:40:01,322: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=mcremone/CN=761206/CN=Matteo Cremonesi
+
+ error: 
+ retcode : 0
+DEBUG 2017-12-24 13:40:01,322: 	 Checking credentials
+DEBUG 2017-12-24 13:40:01,322: 	 Found proxy file /tmp/x509up_u45169
+DEBUG 2017-12-24 13:40:01,323: 	 Getting proxy life time left
+DEBUG 2017-12-24 13:40:01,425: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u45169 -timeleft
+ output : 602635
+
+ error: 
+ retcode : 0
+DEBUG 2017-12-24 13:40:01,528: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u45169 -actimeleft
+ output : 602635
+
+ error: 
+ retcode : 0
+DEBUG 2017-12-24 13:40:01,529: 	 Proxy valid for 167:23:55 hours
+DEBUG 2017-12-24 13:40:01,632: 	 Executing : 
+ command : env X509_USER_PROXY=/tmp/x509up_u45169 voms-proxy-info -fqan
+ output : /cms/Role=NULL/Capability=NULL
+/cms/TEAM/Role=NULL/Capability=NULL
+/cms/production/Role=NULL/Capability=NULL
+/cms/uscms/Role=NULL/Capability=NULL
+
+ error: 
+ retcode : 0
+DEBUG 2017-12-24 13:40:02,762: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+DEBUG 2017-12-24 13:40:02,869: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=mcremone/CN=761206/CN=Matteo Cremonesi
+
+ error: 
+ retcode : 0
+DEBUG 2017-12-24 13:40:02,870: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2017-12-24 13:40:02,870: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=mcremone/CN=761206/CN=Matteo Cremonesi_cmsweb.cern.ch for credential name
+DEBUG 2017-12-24 13:40:03,875: 	 Executing : 
+ command : myproxy-info -l 1667e364bf682097124d2b5435324fe01d1b12b2 -s myproxy.cern.ch
+ output : username: 1667e364bf682097124d2b5435324fe01d1b12b2
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=mcremone/CN=761206/CN=Matteo Cremonesi
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  timeleft: 530:19:50  (22.1 days)
+
+ error: 
+ retcode : 0
+DEBUG 2017-12-24 13:40:03,876: 	 Myproxy is valid: 1909190
+DEBUG 2017-12-24 13:40:03,876: 	 Command use: submit
+DEBUG 2017-12-24 13:40:03,876: 	 Options use: ['--config', <WMCore.Configuration.Configuration object at 0x7fdbc1d652d0>]
+DEBUG 2017-12-24 13:40:05,052: 	 CRABClient version: 3.3.1707.patch1
+DEBUG 2017-12-24 13:40:05,052: 	 Instance is prod
+DEBUG 2017-12-24 13:40:05,052: 	 Server base url is cmsweb.cern.ch
+DEBUG 2017-12-24 13:40:05,052: 	 Command url /crabserver/prod/workflow
+DEBUG 2017-12-24 13:40:05,052: 	 Started submission
+DEBUG 2017-12-24 13:40:05,052: 	 Working on /uscms_data/d3/matteoc/analysis/CMSSW_8_0_28/src/PandaProd/Producer/cfg/Submission/crab_TTbarDMJets_pseudoscalar_Mchi-1_Mphi-100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+DEBUG 2017-12-24 13:40:06,501: 	 Loading required information from the environment
+DEBUG 2017-12-24 13:40:06,501: 	 Found CMSSW_8_0_28 for slc6_amd64_gcc530 with base /uscms_data/d3/matteoc/analysis/CMSSW_8_0_28
+DEBUG 2017-12-24 13:40:06,501: 	 Loading required information from the environment
+DEBUG 2017-12-24 13:40:06,501: 	 Found CMSSW_8_0_28 for slc6_amd64_gcc530 with base /uscms_data/d3/matteoc/analysis/CMSSW_8_0_28
+DEBUG 2017-12-24 13:40:06,512: 	 UNIQUE NAME: tarUUID d2e4790f-6613-4442-b3ed-89908e296760 
+DEBUG 2017-12-24 13:40:06,512: 	 self.config: from WMCore.Configuration import Configuration
+config = Configuration()
+config.section_('General')
+config.General.transferLogs = False
+config.General.transferOutputs = True
+config.General.workArea = 'Submission'
+config.General.requestName = 'TTbarDMJets_pseudoscalar_Mchi-1_Mphi-100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1'
+config.section_('JobType')
+config.JobType.psetName = 'prod.py'
+config.JobType.pluginName = 'Analysis'
+config.JobType.pyCfgParams = ['config=Summer16', 'outputFile=panda.root']
+config.section_('Data')
+config.Data.inputDataset = '/TTbarDMJets_pseudoscalar_Mchi-1_Mphi-100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6_ext1-v1/MINIAODSIM'
+config.Data.outputDatasetTag = 'TTbarDMJets_pseudoscalar_Mchi-1_Mphi-100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1'
+config.Data.totalUnits = -1
+config.Data.unitsPerJob = 40000
+config.Data.ignoreLocality = True
+config.Data.inputDBS = 'global'
+config.Data.splitting = 'EventAwareLumiBased'
+config.Data.outLFNDirBase = '/store/user/mcremone/pandaprod/80X'
+config.Data.lumiMask = None
+config.Data.publication = False
+config.section_('Site')
+config.Site.ignoreGlobalBlacklist = True
+config.Site.whitelist = ['T3_US_FNALLPC']
+config.Site.storageSite = 'T3_US_FNALLPC'
+config.section_('User')
+config.section_('Debug')
+
+DEBUG 2017-12-24 13:40:06,512: 	 self.config.JobType.psetName: prod.py
+INFO 2017-12-24 13:40:06,513: 	 Importing CMSSW configuration prod.py
+DEBUG 2017-12-24 13:40:06,513: 	 Additional parameters for the CMSSW configuration are: ['config=Summer16', 'outputFile=panda.root']
+INFO 2017-12-24 13:40:10,674: 	 Finished importing CMSSW configuration prod.py
+DEBUG 2017-12-24 13:40:10,674: 	 Writing CMSSW configuration to /uscms_data/d3/matteoc/analysis/CMSSW_8_0_28/src/PandaProd/Producer/cfg/Submission/crab_TTbarDMJets_pseudoscalar_Mchi-1_Mphi-100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1/inputs/PSet.py
+DEBUG 2017-12-24 13:40:12,452: 	 The following EDM output files will be collected: []
+DEBUG 2017-12-24 13:40:12,452: 	 The following TFile output files will be collected: []
+DEBUG 2017-12-24 13:40:12,452: 	 The following user output files will be collected: []
+WARNING 2017-12-24 13:40:12,452: 	 Warning: CRAB could not detect any output file in the CMSSW configuration nor was any explicitly specified in the CRAB configuration. Hence CRAB will not collect any output file from this task.
+DEBUG 2017-12-24 13:40:12,452: 	 Loading required information from the environment
+DEBUG 2017-12-24 13:40:12,452: 	 Found CMSSW_8_0_28 for slc6_amd64_gcc530 with base /uscms_data/d3/matteoc/analysis/CMSSW_8_0_28
+DEBUG 2017-12-24 13:40:12,452: 	 Making tarball in /uscms_data/d3/matteoc/analysis/CMSSW_8_0_28/src/PandaProd/Producer/cfg/Submission/crab_TTbarDMJets_pseudoscalar_Mchi-1_Mphi-100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1/inputs/d2e4790f-6613-4442-b3ed-89908e296760default.tgz
+DEBUG 2017-12-24 13:40:12,527: 	 Checking directory /uscms_data/d3/matteoc/analysis/CMSSW_8_0_28/lib
+DEBUG 2017-12-24 13:40:12,527: 	 Adding directory /uscms_data/d3/matteoc/analysis/CMSSW_8_0_28/lib to tarball
+DEBUG 2017-12-24 13:40:15,833: 	 Checking directory /uscms_data/d3/matteoc/analysis/CMSSW_8_0_28/biglib
+DEBUG 2017-12-24 13:40:15,833: 	 Adding directory /uscms_data/d3/matteoc/analysis/CMSSW_8_0_28/biglib to tarball
+DEBUG 2017-12-24 13:40:15,834: 	 Checking directory /uscms_data/d3/matteoc/analysis/CMSSW_8_0_28/module
+DEBUG 2017-12-24 13:40:15,839: 	 Adding data directory /uscms_data/d3/matteoc/analysis/CMSSW_8_0_28/src/PhysicsTools/PatAlgos/interface to tarball
+DEBUG 2017-12-24 13:40:15,927: 	 Adding data directory /uscms_data/d3/matteoc/analysis/CMSSW_8_0_28/src/PhysicsTools/PatUtils/interface to tarball
+DEBUG 2017-12-24 13:40:15,969: 	 Adding data directory /uscms_data/d3/matteoc/analysis/CMSSW_8_0_28/src/PhysicsTools/PatUtils/data to tarball
+DEBUG 2017-12-24 13:40:16,244: 	 Adding data directory /uscms_data/d3/matteoc/analysis/CMSSW_8_0_28/src/PhysicsTools/SelectorUtils/interface to tarball
+DEBUG 2017-12-24 13:40:16,288: 	 Adding data directory /uscms_data/d3/matteoc/analysis/CMSSW_8_0_28/src/RecoMET/METAlgorithms/interface to tarball
+DEBUG 2017-12-24 13:40:16,321: 	 Adding data directory /uscms_data/d3/matteoc/analysis/CMSSW_8_0_28/src/RecoMET/METProducers/interface to tarball
+DEBUG 2017-12-24 13:40:16,363: 	 Adding data directory /uscms_data/d3/matteoc/analysis/CMSSW_8_0_28/src/RecoMET/METFilters/interface to tarball
+DEBUG 2017-12-24 13:40:16,371: 	 Adding data directory /uscms_data/d3/matteoc/analysis/CMSSW_8_0_28/src/RecoMET/METFilters/data to tarball
+DEBUG 2017-12-24 13:40:16,390: 	 Adding data directory /uscms_data/d3/matteoc/analysis/CMSSW_8_0_28/src/CommonTools/PileupAlgos/interface to tarball
+DEBUG 2017-12-24 13:40:16,402: 	 Adding data directory /uscms_data/d3/matteoc/analysis/CMSSW_8_0_28/src/RecoEgamma/PhotonIdentification/interface to tarball
+DEBUG 2017-12-24 13:40:16,413: 	 Adding data directory /uscms_data/d3/matteoc/analysis/CMSSW_8_0_28/src/RecoEgamma/PhotonIdentification/data to tarball
+DEBUG 2017-12-24 13:40:16,445: 	 Adding data directory /uscms_data/d3/matteoc/analysis/CMSSW_8_0_28/src/RecoEgamma/EgammaIsolationAlgos/interface to tarball
+DEBUG 2017-12-24 13:40:16,502: 	 Adding data directory /uscms_data/d3/matteoc/analysis/CMSSW_8_0_28/src/PandaProd/Auxiliary/interface to tarball
+DEBUG 2017-12-24 13:40:16,561: 	 Adding data directory /uscms_data/d3/matteoc/analysis/CMSSW_8_0_28/src/PandaProd/Producer/data to tarball
+DEBUG 2017-12-24 13:40:16,658: 	 Adding data directory /uscms_data/d3/matteoc/analysis/CMSSW_8_0_28/src/PandaProd/Producer/interface to tarball
+DEBUG 2017-12-24 13:40:16,696: 	 Adding data directory /uscms_data/d3/matteoc/analysis/CMSSW_8_0_28/src/PandaProd/Utilities/data to tarball
+DEBUG 2017-12-24 13:40:16,786: 	 Adding data directory /uscms_data/d3/matteoc/analysis/CMSSW_8_0_28/src/PandaProd/Utilities/interface to tarball
+DEBUG 2017-12-24 13:40:16,813: 	 Adding data directory /uscms_data/d3/matteoc/analysis/CMSSW_8_0_28/src/PandaTree/Framework/interface to tarball
+DEBUG 2017-12-24 13:40:16,851: 	 Adding data directory /uscms_data/d3/matteoc/analysis/CMSSW_8_0_28/src/PandaTree/Objects/interface to tarball
+DEBUG 2017-12-24 13:40:16,927: 	 Adding data directory /uscms_data/d3/matteoc/analysis/CMSSW_8_0_28/src/PandaTree/Utils/interface to tarball
+DEBUG 2017-12-24 13:40:17,440: 	 Uploading archive /uscms_data/d3/matteoc/analysis/CMSSW_8_0_28/src/PandaProd/Producer/cfg/Submission/crab_TTbarDMJets_pseudoscalar_Mchi-1_Mphi-100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1/inputs/d2e4790f-6613-4442-b3ed-89908e296760default.tgz (6.115234.1 MB) to the CRAB cache. Using URI https://cmsweb.cern.ch/crabcache
+DEBUG 2017-12-24 13:40:23,608: 	 Loading required information from the environment
+DEBUG 2017-12-24 13:40:23,608: 	 Found CMSSW_8_0_28 for slc6_amd64_gcc530 with base /uscms_data/d3/matteoc/analysis/CMSSW_8_0_28
+DEBUG 2017-12-24 13:40:23,608: 	 Making tarball in /uscms_data/d3/matteoc/analysis/CMSSW_8_0_28/src/PandaProd/Producer/cfg/Submission/crab_TTbarDMJets_pseudoscalar_Mchi-1_Mphi-100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1/inputs/debugFiles.tgz
+DEBUG 2017-12-24 13:40:23,629: 	 Uploading archive /uscms_data/d3/matteoc/analysis/CMSSW_8_0_28/src/PandaProd/Producer/cfg/Submission/crab_TTbarDMJets_pseudoscalar_Mchi-1_Mphi-100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1/inputs/debugFiles.tgz (6 KB) to the CRAB cache. Using URI https://cmsweb.cern.ch/crabcache
+DEBUG 2017-12-24 13:40:24,939: 	 Result uploading input files: f3ee9e146f449ebaaf1bebe0de2ec183c13a41c431fd6adb00717570bd1f346b.tar.gz 
+INFO 2017-12-24 13:40:24,939: 	 Sending the request to the server
+DEBUG 2017-12-24 13:40:24,939: 	 Submitting {'maxjobruntime': 1250, 'extrajdl': [], 'ignorelocality': 1, 'savelogsflag': 0, 'useparent': 0, 'asyncdest': 'T3_US_FNALLPC', 'algoargs': 40000, 'cachefilename': 'f3ee9e146f449ebaaf1bebe0de2ec183c13a41c431fd6adb00717570bd1f346b.tar.gz', 'numcores': 1, 'addoutputfiles': [], 'generator': 'pythia', 'maxmemory': 2000, 'publishdbsurl': 'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', 'priority': 10, 'jobsw': 'CMSSW_8_0_28', 'edmoutfiles': [], 'userfiles': [], 'primarydataset': '', 'inputdata': '/TTbarDMJets_pseudoscalar_Mchi-1_Mphi-100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6_ext1-v1/MINIAODSIM', 'lfn': '/store/user/mcremone/pandaprod/80X', 'dryrun': 0, 'workflow': 'crab_TTbarDMJets_pseudoscalar_Mchi-1_Mphi-100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1', 'sitewhitelist': ['T3_US_FNALLPC'], 'nonprodsw': 0, 'tfileoutfiles': [], 'oneEventMode': 0, 'debugfilename': 'cdf4493d56056034c2533f269991ded3b543afdd30956123ba35ef39c2dd4d88.tar.gz', 'cacheurl': u'https://cmsweb.cern.ch/crabcache', 'saveoutput': 1, 'publication': 0, 'jobarch': 'slc6_amd64_gcc530', 'totalunits': -1, 'splitalgo': 'EventAwareLumiBased', 'ignoreglobalblacklist': 1, 'nonvaliddata': 0, 'dbsurl': 'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', 'publishgroupname': 0, 'jobtype': 'Analysis', 'publishname2': 'TTbarDMJets_pseudoscalar_Mchi-1_Mphi-100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1'} 
+DEBUG 2017-12-24 13:40:24,940: 	 Encoded submit request: maxjobruntime=1250&ignorelocality=1&savelogsflag=0&useparent=0&asyncdest=T3_US_FNALLPC&algoargs=40000&cachefilename=f3ee9e146f449ebaaf1bebe0de2ec183c13a41c431fd6adb00717570bd1f346b.tar.gz&numcores=1&generator=pythia&maxmemory=2000&publishdbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fphys03%2FDBSWriter&priority=10&jobsw=CMSSW_8_0_28&primarydataset=&inputdata=%2FTTbarDMJets_pseudoscalar_Mchi-1_Mphi-100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8%2FRunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6_ext1-v1%2FMINIAODSIM&lfn=%2Fstore%2Fuser%2Fmcremone%2Fpandaprod%2F80X&dryrun=0&workflow=crab_TTbarDMJets_pseudoscalar_Mchi-1_Mphi-100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1&nonprodsw=0&oneEventMode=0&debugfilename=cdf4493d56056034c2533f269991ded3b543afdd30956123ba35ef39c2dd4d88.tar.gz&cacheurl=https%3A%2F%2Fcmsweb.cern.ch%2Fcrabcache&saveoutput=1&publication=0&jobarch=slc6_amd64_gcc530&totalunits=-1&splitalgo=EventAwareLumiBased&ignoreglobalblacklist=1&nonvaliddata=0&dbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fglobal%2FDBSReader&publishgroupname=0&jobtype=Analysis&publishname2=TTbarDMJets_pseudoscalar_Mchi-1_Mphi-100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1&sitewhitelist=T3_US_FNALLPC
+DEBUG 2017-12-24 13:40:26,520: 	 Result: {u'result': [{u'RequestName': u'171224_194026:mcremone_crab_TTbarDMJets_pseudoscalar_Mchi-1_Mphi-100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1'}]}
+INFO 2017-12-24 13:40:26,537: 	 Success: Your task has been delivered to the CRAB3 server.
+INFO 2017-12-24 13:40:26,538: 	 Task name: 171224_194026:mcremone_crab_TTbarDMJets_pseudoscalar_Mchi-1_Mphi-100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+INFO 2017-12-24 13:40:26,538: 	 Please use 'crab status' to check how the submission process proceeds.
+DEBUG 2017-12-24 13:40:26,538: 	 About to return

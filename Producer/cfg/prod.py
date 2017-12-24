@@ -22,7 +22,7 @@ egmSmearingType = 'Moriond2017_JEC'
 # Global tags
 # https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideFrontierConditions#Global_Tags_for_2017_data_taking
 # https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideFrontierConditions#Global_Tags_for_PdmVMCcampaignPh
-
+print "===>", options.config
 if options.config == '18Apr2017':
     options.isData = True
     options.globaltag = '80X_dataRun2_2016LegacyRepro_v4'
