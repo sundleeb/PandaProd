@@ -23,8 +23,12 @@ Run
 
     #Example, running on 10 events:
 
-    cmsRun prod.py config=Summer16 inputFiles=root://cmsxrootd.fnal.gov///store/mc/RunIISummer16MiniAODv2/TTbarDMJets_pseudoscalar_Mchi-1_Mphi-100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/MINIAODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6_ext1-v1/80000/74F12CB6-44B7-E611-A5FD-0CC47A13CFC0.root maxEvents=10
+    cmsRun PandaProd/Producer/cfg/prod.py config=Summer16 inputFiles=root://cmsxrootd.fnal.gov///store/mc/RunIISummer16MiniAODv2/TTbarDMJets_pseudoscalar_Mchi-1_Mphi-100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/MINIAODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6_ext1-v1/80000/74F12CB6-44B7-E611-A5FD-0CC47A13CFC0.root maxEvents=10
 
 Crab Job Submission
 
-     #please change the line [here](https://github.com/LPCPandaPhysics/PandaProd/blob/branch-80X/Producer/cfg/submitCrab.py#L45) to point to your personal EOS area (Soon LPCPhysics EOS will exist for common storage)
+     #please change the line in submitCrab.py https://github.com/LPCPandaPhysics/PandaProd/blob/branch-80X/Producer/cfg/submitCrab.py#L45 to point to your personal EOS area (Soon LPCPhysics EOS will exist for common storage)
+     #setup
+     cd PandaProd/Producer/cfg/
+     source setupCrab.sh
+     python submitCrab.py
