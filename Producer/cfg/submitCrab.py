@@ -31,9 +31,10 @@ config.General.transferLogs = False
 config.JobType.pluginName = 'Analysis'
 config.JobType.psetName = 'prod.py'
 config.JobType.pyCfgParams=['config=Summer16']
+config.JobType.outputFiles = ['panda.root']
 
 ### DATA configuration
-config.Data.inputDataset = '/HplusToTauNu-M500/amarini-amarini_PrivateMC_HPlusToTauNu_June2015-16aa19d591b8b49c55c4508e7a7c9233/USER'
+#config.Data.inputDataset = '/HplusToTauNu-M500/amarini-amarini_PrivateMC_HPlusToTauNu_June2015-16aa19d591b8b49c55c4508e7a7c9233/USER'
 config.Data.inputDBS = 'global'
 config.Data.ignoreLocality = True
 
@@ -42,7 +43,7 @@ config.Data.unitsPerJob = 10
 config.Data.totalUnits = -1
 
 config.Site.storageSite = 'T3_US_FNALLPC' 
-config.Data.outLFNDirBase = '/store/user/mcremone/pandaprod/80X' 
+config.Data.outLFNDirBase = '/store/user/shoh/pandaprod/80X' #Please change USER to yours
 config.Data.publication = False
 config.Data.outputDatasetTag ='PandA'
 
