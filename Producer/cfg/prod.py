@@ -477,7 +477,7 @@ if egFix:
         met = 'slimmedMETs'
     )
 
-process.panda.outputFile = options.outputFile
+#process.panda.outputFile = options.outputFile
 process.panda.printLevel = options.printLevel
 
 process.ntuples = cms.EndPath(process.panda)
