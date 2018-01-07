@@ -1,0 +1,5 @@
+root://cmseos.fnal.gov//store/user/shoh/miniaod/BBbarDM_LO_MZprime-500_Mhs-50_Mchi-150_gSM-0p25_gDM-1p0_th_0p01_13TeV-madgraph/BBbarDM_LO_MZprime-500_Mhs-50_Mchi-150_gSM-0p25_gDM-1p0_th_0p01_13TeV-madgraph_1764289_miniaod.root
+root://cmseos.fnal.gov//store/user/shoh/miniaod/BBbarDM_LO_MZprime-500_Mhs-50_Mchi-150_gSM-0p25_gDM-1p0_th_0p01_13TeV-madgraph/BBbarDM_LO_MZprime-500_Mhs-50_Mchi-150_gSM-0p25_gDM-1p0_th_0p01_13TeV-madgraph_19206548_miniaod.root
+root://cmseos.fnal.gov//store/user/shoh/miniaod/BBbarDM_LO_MZprime-500_Mhs-50_Mchi-150_gSM-0p25_gDM-1p0_th_0p01_13TeV-madgraph/BBbarDM_LO_MZprime-500_Mhs-50_Mchi-150_gSM-0p25_gDM-1p0_th_0p01_13TeV-madgraph_32477704_miniaod.root
+root://cmseos.fnal.gov//store/user/shoh/miniaod/BBbarDM_LO_MZprime-500_Mhs-50_Mchi-150_gSM-0p25_gDM-1p0_th_0p01_13TeV-madgraph/BBbarDM_LO_MZprime-500_Mhs-50_Mchi-150_gSM-0p25_gDM-1p0_th_0p01_13TeV-madgraph_32600968_miniaod.root
+root://cmseos.fnal.gov//store/user/shoh/miniaod/BBbarDM_LO_MZprime-500_Mhs-50_Mchi-150_gSM-0p25_gDM-1p0_th_0p01_13TeV-madgraph/BBbarDM_LO_MZprime-500_Mhs-50_Mchi-150_gSM-0p25_gDM-1p0_th_0p01_13TeV-madgraph_34192157_miniaod.root
