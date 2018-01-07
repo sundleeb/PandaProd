@@ -36,14 +36,14 @@ config.JobType.outputFiles = ['panda.root']
 ### DATA configuration
 #config.Data.inputDataset = '/HplusToTauNu-M500/amarini-amarini_PrivateMC_HPlusToTauNu_June2015-16aa19d591b8b49c55c4508e7a7c9233/USER'
 config.Data.inputDBS = 'global'
-config.Data.ignoreLocality = True
+#config.Data.ignoreLocality = True
 
 config.Data.splitting = 'FileBased'
 config.Data.unitsPerJob = 10
 config.Data.totalUnits = -1
 
 config.Site.storageSite = 'T3_US_FNALLPC' 
-config.Data.outLFNDirBase = '/store/user/lpcmetx/pandatest' #Please change USER to yours
+config.Data.outLFNDirBase = '/store/user/shoh/pandaprod/80X' #Please change USER to yours
 config.Data.publication = False
 config.Data.outputDatasetTag ='PandA'
 
@@ -112,6 +112,7 @@ if __name__ == '__main__':
 			split = ll.split('/')
 			if split[1] == "uscms_data":
 				config.Data.userInputFiles = open(ll).readlines()
+				config.Data.outputPrimaryDataset = split[-1].split('.')[0]
 			else:
 				config.Data.inputDataset = ll
 			if split[-1]=='MINIAOD':
@@ -189,10 +190,14 @@ if __name__ == '__main__':
 	###################################################
 	
 	#config.Data.splitting = 'EventAwareLumiBased'
-	config.Data.unitsPerJob = 1000
+	config.Data.unitsPerJob = 50
 	submitList([
 			#'/TTbarDMJets_pseudoscalar_Mchi-1_Mphi-100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6_ext1-v1/MINIAODSIM',
-			'/uscms_data/d1/shoh/filelists/DarkHiggs/DiJetsDM_LO_MZprime-300_Mhs-50_Mchi-10_gSM-0p25_gDM-1p0_th_0p01_13TeV-madgraph.txt',
+			'/uscms_data/d1/shoh/filelists/DarkHiggs/BBbarDM_LO_MZprime-1000_Mhs-50_Mchi-100_gSM-0p25_gDM-1p0_th_0p01_13TeV-madgraph.txt',
+			'/uscms_data/d1/shoh/filelists/DarkHiggs/DiJetsDM_LO_MZprime-1000_Mhs-150_Mchi-10_gSM-0p25_gDM-1p0_th_0p01_13TeV-madgraph.txt',
+			'/uscms_data/d1/shoh/filelists/DarkHiggs/DiJetsDM_LO_MZprime-300_Mhs-150_Mchi-10_gSM-0p25_gDM-1p0_th_0p01_13TeV-madgraph.txt',
+			'/uscms_data/d1/shoh/filelists/DarkHiggs/BBbarDM_LO_MZprime-1000_Mhs-50_Mchi-300_gSM-0p25_gDM-1p0_th_0p01_13TeV-madgraph.txt',
+			'/uscms_data/d1/shoh/filelists/DarkHiggs/DiJetsDM_LO_MZprime-3000_Mhs-150_Mchi-10_gSM-0p25_gDM-1p0_th_0p01_13TeV-madgraph.txt',
 	])
 	'''
 	###################################################
