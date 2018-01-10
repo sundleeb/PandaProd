@@ -36,7 +36,7 @@ config.JobType.outputFiles = ['panda.root']
 ### DATA configuration
 #config.Data.inputDataset = '/HplusToTauNu-M500/amarini-amarini_PrivateMC_HPlusToTauNu_June2015-16aa19d591b8b49c55c4508e7a7c9233/USER'
 config.Data.inputDBS = 'global'
-config.Data.ignoreLocality = True
+#config.Data.ignoreLocality = True
 
 config.Data.splitting = 'FileBased'
 config.Data.unitsPerJob = 10
@@ -72,7 +72,11 @@ if __name__ == '__main__':
 			## if it is not in the request try the next
 			if sys.argv[1] !=	config.General.requestName: return
 			###
-			print "--- Submitting " + "\033[01;32m" + config.Data.inputDataset.split('/')[1] + "\033[00m"	+ " ---"
+			#if split[1] == "uscms_data":
+			print "--- Submitting " + "\033[01;32m" + config.General.requestName + "\033[00m"   + " ---"
+			#else:
+			#	print "--- Submitting " + "\033[01;32m" + config.Data.inputDataset.split('/')[1] + "\033[00m"	+ " ---"
+			
 			config.Data.outputDatasetTag = config.General.requestName
 			try:
 				crabCommand('submit', config = config)
@@ -102,11 +106,15 @@ if __name__ == '__main__':
 				config.JobType.pyCfgParams[idx] = "isSignal=" + value
 				return 
 
-						
+			
 	def submitList(l):
 		for ll in l:
 			split = ll.split('/')
-			config.Data.inputDataset = ll
+			if split[1] == "uscms_data":
+				config.Data.userInputFiles = open(ll).readlines()
+				config.Data.outputPrimaryDataset = split[-1].split('.')[0]
+			else:
+				config.Data.inputDataset = ll
 			if split[-1]=='MINIAOD':
 				config.General.requestName = split[1]+'_'+split[2]
 			elif 'ext' in split[-2]:
@@ -116,7 +124,8 @@ if __name__ == '__main__':
 				else:
 					config.General.requestName = split[1]
 			else:
-				config.General.requestName = split[1]
+				#private file
+				config.General.requestName = split[-1].split('.')[0]
 			submit(config)
 
 	#############################################################################################
@@ -180,12 +189,16 @@ if __name__ == '__main__':
 	setdata("False")
 	###################################################
 	
-	config.Data.splitting = 'EventAwareLumiBased'
-	config.Data.unitsPerJob = 40000
+	#config.Data.splitting = 'EventAwareLumiBased'
+	config.Data.unitsPerJob = 50
 	submitList([
-			'/TTbarDMJets_pseudoscalar_Mchi-1_Mphi-100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6_ext1-v1/MINIAODSIM',
+			#'/TTbarDMJets_pseudoscalar_Mchi-1_Mphi-100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6_ext1-v1/MINIAODSIM',
+			'/uscms_data/d1/shoh/filelists/DarkHiggs/BBbarDM_LO_MZprime-1000_Mhs-50_Mchi-100_gSM-0p25_gDM-1p0_th_0p01_13TeV-madgraph.txt',
+			'/uscms_data/d1/shoh/filelists/DarkHiggs/DiJetsDM_LO_MZprime-1000_Mhs-150_Mchi-10_gSM-0p25_gDM-1p0_th_0p01_13TeV-madgraph.txt',
+			'/uscms_data/d1/shoh/filelists/DarkHiggs/DiJetsDM_LO_MZprime-300_Mhs-150_Mchi-10_gSM-0p25_gDM-1p0_th_0p01_13TeV-madgraph.txt',
+			'/uscms_data/d1/shoh/filelists/DarkHiggs/BBbarDM_LO_MZprime-1000_Mhs-50_Mchi-300_gSM-0p25_gDM-1p0_th_0p01_13TeV-madgraph.txt',
+			'/uscms_data/d1/shoh/filelists/DarkHiggs/DiJetsDM_LO_MZprime-3000_Mhs-150_Mchi-10_gSM-0p25_gDM-1p0_th_0p01_13TeV-madgraph.txt',
 	])
-	
 	'''
 	###################################################
 	setdata("False")
