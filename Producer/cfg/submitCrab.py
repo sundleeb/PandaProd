@@ -44,7 +44,7 @@ config.Data.unitsPerJob = 10
 config.Data.totalUnits = -1
 
 config.Site.storageSite = 'T3_US_FNALLPC' 
-config.Data.outLFNDirBase = '/store/user/shoh/pandaprod/80X' #Please change USER to yours
+config.Data.outLFNDirBase = '/store/group/lpcmetx/pandaprod/92X' #Please change USER to yours
 config.Data.publication = False
 config.Data.outputDatasetTag ='PandA'
 
