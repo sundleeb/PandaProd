@@ -123,16 +123,17 @@ if __name__ == '__main__':
 	#############################################################################################
 	## From now on that's what users should modify: this is the a-la-CRAB2 configuration part. ##
 	#############################################################################################
-	'''
+	
 	###################################################
 	setdata("True")
 	###################################################
-	config.Data.unitsPerJob = 100
+	config.Data.splitting = 'LumiBased'
+	config.Data.unitsPerJob = 40000
 	
 	submitList([
                       '/MET/Run2017A-PromptReco-v3/MINIAOD'
 			])
-	'''
+	
 	'''
 	
 	config.Data.unitsPerJob = 30
@@ -151,13 +152,8 @@ if __name__ == '__main__':
 	
         '''
 	###################################################
-	setdata("False")
+	#setdata("False")
 	###################################################
-	
-	config.Data.splitting = 'EventAwareLumiBased'
-	config.Data.unitsPerJob = 40000
-	submitList([
-	])
 	
 	'''
 	###################################################
