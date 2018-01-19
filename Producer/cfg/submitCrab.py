@@ -84,10 +84,11 @@ if __name__ == '__main__':
 
 	def setdata(value="True"):
 		if value=='True':
-			config.Data.splitting = 'LumiBased'
-			#config.Data.lumiMask=None
-			url = "https://cms-service-dqm.web.cern.ch/cms-service-dqm/CAF/certification/Collisions16/13TeV/ReReco/Final/"
-			config.Data.lumiMask = url + "Cert_271036-284044_13TeV_23Sep2016ReReco_Collisions16_JSON.txt"
+			#config.Data.splitting = 'LumiBased'
+			config.Data.splitting = 'FileBased'
+			config.Data.lumiMask=None
+			#url = "https://cms-service-dqm.web.cern.ch/cms-service-dqm/CAF/certification/Collisions17/13TeV/Final/"
+			#config.Data.lumiMask = url + "Cert_294927-306462_13TeV_PromptReco_Collisions17_JSON.txt"
 		else:
 			config.Data.lumiMask = None
 			config.Data.splitting = 'FileBased'
@@ -124,12 +125,12 @@ if __name__ == '__main__':
 	## From now on that's what users should modify: this is the a-la-CRAB2 configuration part. ##
 	#############################################################################################
 	
+	
 	###################################################
 	setdata("True")
 	###################################################
-	config.Data.splitting = 'LumiBased'
-	config.Data.unitsPerJob = 40000
-	
+	config.Data.unitsPerJob = 1000
+
 	submitList([
                       '/MET/Run2017A-PromptReco-v3/MINIAOD'
 			])
@@ -152,7 +153,6 @@ if __name__ == '__main__':
 	
         '''
 	###################################################
-	#setdata("False")
 	###################################################
 	
 	'''
