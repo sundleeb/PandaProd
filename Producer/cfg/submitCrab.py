@@ -108,7 +108,11 @@ if __name__ == '__main__':
 	def submitList(l):
 		for ll in l:
 			split = ll.split('/')
-			config.Data.inputDataset = ll
+                        if split[1] == "uscms_data":
+                                config.Data.userInputFiles = open(ll).readlines()
+                                config.Data.outputPrimaryDataset = split[-1].split('.')[0]
+                        else:
+                                config.Data.inputDataset = ll
 			if split[-1]=='MINIAOD':
 				config.General.requestName = split[1]+'_'+split[2]
 			elif 'ext' in split[-2]:
@@ -118,14 +122,59 @@ if __name__ == '__main__':
 				else:
 					config.General.requestName = split[1]
 			else:
-				config.General.requestName = split[1]
+                                #private file
+				#config.General.requestName = split[1]
+                                config.General.requestName = split[-1].split('.')[0]
 			submit(config)
 
 	#############################################################################################
 	## From now on that's what users should modify: this is the a-la-CRAB2 configuration part. ##
 	#############################################################################################
+        ###################################################
+        setdata("False")
+        ###################################################
+
+        #config.Data.splitting = 'EventAwareLumiBased'
+        config.Data.unitsPerJob = 1
+        submitList([
+                        '/uscms_data/d3/naina25/Panda_2018/Panda_Prod/CMSSW_9_2_6/src/PandaProd/Producer/cfg/file_lists2017/mc/DYJetsToLL_HT.txt',
+                        '/uscms_data/d3/naina25/Panda_2018/Panda_Prod/CMSSW_9_2_6/src/PandaProd/Producer/cfg/file_lists2017/mc/DYJetsToLL_Pt.txt',
+                        '/uscms_data/d3/naina25/Panda_2018/Panda_Prod/CMSSW_9_2_6/src/PandaProd/Producer/cfg/file_lists2017/mc/DYJetsToNuNu_PtZ.txt',
+                        '/uscms_data/d3/naina25/Panda_2018/Panda_Prod/CMSSW_9_2_6/src/PandaProd/Producer/cfg/file_lists2017/mc/Diboson.txt',
+                        '/uscms_data/d3/naina25/Panda_2018/Panda_Prod/CMSSW_9_2_6/src/PandaProd/Producer/cfg/file_lists2017/mc/GJets_HT.txt',
+                        '/uscms_data/d3/naina25/Panda_2018/Panda_Prod/CMSSW_9_2_6/src/PandaProd/Producer/cfg/file_lists2017/mc/QCD.txt',
+                        '/uscms_data/d3/naina25/Panda_2018/Panda_Prod/CMSSW_9_2_6/src/PandaProd/Producer/cfg/file_lists2017/mc/Top.txt',
+                        '/uscms_data/d3/naina25/Panda_2018/Panda_Prod/CMSSW_9_2_6/src/PandaProd/Producer/cfg/file_lists2017/mc/WJetsToLNu_HT.txt',
+                        '/uscms_data/d3/naina25/Panda_2018/Panda_Prod/CMSSW_9_2_6/src/PandaProd/Producer/cfg/file_lists2017/mc/WJetsToLNu_Pt.txt',
+                        '/uscms_data/d3/naina25/Panda_2018/Panda_Prod/CMSSW_9_2_6/src/PandaProd/Producer/cfg/file_lists2017/mc/ZJetsToNuNu_HT.txt',
+        ])
+
+        '''                 
+        ###################################################
+        setdata("True")
+        ###################################################
+        config.Data.unitsPerJob = 4000
+
+        submitList([
+                        '/uscms_data/d3/naina25/Panda_2018/Panda_Prod/CMSSW_9_2_6/src/PandaProd/Producer/cfg/file_lists2017/data/MET.txt',
+                        '/uscms_data/d3/naina25/Panda_2018/Panda_Prod/CMSSW_9_2_6/src/PandaProd/Producer/cfg/file_lists2017/data/SingleElectron.txt',
+                        '/uscms_data/d3/naina25/Panda_2018/Panda_Prod/CMSSW_9_2_6/src/PandaProd/Producer/cfg/file_lists2017/data/SingleMuon.txt',
+                        '/uscms_data/d3/naina25/Panda_2018/Panda_Prod/CMSSW_9_2_6/src/PandaProd/Producer/cfg/file_lists2017/data/SinglePhoton.txt',
+                        ])
+            
+        ''' 	
+        '''	
+	###################################################
+	setdata("True")
+	###################################################
+	config.Data.unitsPerJob = 4000
+
+	submitList([
+                      '/MET/Run2017A-PromptReco-v3/MINIAOD'
+			])
 	
-	
+        '''	
+        '''	
 	###################################################
 	setdata("True")
 	###################################################
@@ -135,6 +184,7 @@ if __name__ == '__main__':
                       '/MET/Run2017A-PromptReco-v3/MINIAOD'
 			])
 	
+	'''
 	'''
 	
 	config.Data.unitsPerJob = 30
@@ -166,6 +216,8 @@ if __name__ == '__main__':
                         '/WJetsToLNu_HT-100To200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6_ext1-v1/MINIAODSIM' 
 	])
 	
+        '''
+        '''
 	setdata("False")
 	config.Data.splitting = 'FileBased'
 	config.Data.unitsPerJob = 1
@@ -173,4 +225,4 @@ if __name__ == '__main__':
 	setsignal("True")
 	submitList([
 		])
-'''
+        '''
