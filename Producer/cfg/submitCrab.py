@@ -85,10 +85,11 @@ if __name__ == '__main__':
 	def setdata(value="True"):
 		if value=='True':
 			#config.Data.splitting = 'LumiBased'
-			config.Data.splitting = 'FileBased'
-			config.Data.lumiMask=None
-			#url = "https://cms-service-dqm.web.cern.ch/cms-service-dqm/CAF/certification/Collisions17/13TeV/Final/"
-			#config.Data.lumiMask = url + "Cert_294927-306462_13TeV_PromptReco_Collisions17_JSON.txt"
+			#config.Data.splitting = 'FileBased'
+			config.Data.splitting = 'EventAwareLumiBased'
+			#config.Data.lumiMask=None
+			url = "https://cms-service-dqm.web.cern.ch/cms-service-dqm/CAF/certification/Collisions17/13TeV/Final/"
+			config.Data.lumiMask = url + "Cert_294927-306462_13TeV_PromptReco_Collisions17_JSON.txt"
 		else:
 			config.Data.lumiMask = None
 			config.Data.splitting = 'FileBased'
@@ -130,7 +131,9 @@ if __name__ == '__main__':
 	#############################################################################################
 	## From now on that's what users should modify: this is the a-la-CRAB2 configuration part. ##
 	#############################################################################################
-        ###################################################
+ 
+        '''                 
+       ###################################################
         setdata("False")
         ###################################################
 
@@ -150,6 +153,7 @@ if __name__ == '__main__':
         ])
 
         '''                 
+        '''                 
         ###################################################
         setdata("True")
         ###################################################
@@ -163,17 +167,15 @@ if __name__ == '__main__':
                         ])
             
         ''' 	
-        '''	
 	###################################################
 	setdata("True")
 	###################################################
-	config.Data.unitsPerJob = 4000
+	config.Data.unitsPerJob = 20000
 
 	submitList([
-                      '/MET/Run2017A-PromptReco-v3/MINIAOD'
+                      '/MET/Run2017E-PromptReco-v1/MINIAOD'
 			])
 	
-        '''	
         '''	
 	###################################################
 	setdata("True")
