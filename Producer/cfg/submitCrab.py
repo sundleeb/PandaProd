@@ -73,7 +73,7 @@ if __name__ == '__main__':
 			## if it is not in the request try the next
 			if sys.argv[1] !=	config.General.requestName: return
 			###
-			print "--- Submitting " + "\033[01;32m" + config.Data.inputDataset.split('/')[1] + "\033[00m"	+ " ---"
+			#print "--- Submitting " + "\033[01;32m" + config.Data.inputDataset.split('/')[1] + "\033[00m"	+ " ---"
 			config.Data.outputDatasetTag = config.General.requestName
 			try:
 				crabCommand('submit', config = config)
@@ -110,8 +110,10 @@ if __name__ == '__main__':
 		for ll in l:
 			split = ll.split('/')
                         if split[1] == "uscms_data":
-                                config.Data.userInputFiles = open(ll).readlines()
-                                config.Data.outputPrimaryDataset = split[-1].split('.')[0]
+                                config.Data.inputDataset = open(ll).readlines()
+                               # config.Data.inputDataset = ''.join(DatainputDataset) 
+                                print config.Data.inputDataset
+                                #config.Data.outputPrimaryDataset = split[-1].split('.')[0]
                         else:
                                 config.Data.inputDataset = ll
 			if split[-1]=='MINIAOD':
@@ -132,13 +134,25 @@ if __name__ == '__main__':
 	## From now on that's what users should modify: this is the a-la-CRAB2 configuration part. ##
 	#############################################################################################
  
+       ###################################################
+        setdata("False")
+        ###################################################
+        config.Data.splitting = 'FileBased'
+        config.Data.unitsPerJob = 1
+        
+        setsignal("False")
+        submitList([
+                        '/uscms_data/d3/naina25/Panda_2018/Panda_Prod/CMSSW_9_2_6/src/PandaProd/Producer/cfg/file_lists2017/mc/DYJetsToLL_HT.txt',
+        ])
+
         '''                 
        ###################################################
         setdata("False")
         ###################################################
-
-        #config.Data.splitting = 'EventAwareLumiBased'
+        config.Data.splitting = 'FileBased'
         config.Data.unitsPerJob = 1
+        
+        setsignal("False")
         submitList([
                         '/uscms_data/d3/naina25/Panda_2018/Panda_Prod/CMSSW_9_2_6/src/PandaProd/Producer/cfg/file_lists2017/mc/DYJetsToLL_HT.txt',
                         '/uscms_data/d3/naina25/Panda_2018/Panda_Prod/CMSSW_9_2_6/src/PandaProd/Producer/cfg/file_lists2017/mc/DYJetsToLL_Pt.txt',
@@ -157,7 +171,7 @@ if __name__ == '__main__':
         ###################################################
         setdata("True")
         ###################################################
-        config.Data.unitsPerJob = 4000
+        config.Data.unitsPerJob = 5000
 
         submitList([
                         '/uscms_data/d3/naina25/Panda_2018/Panda_Prod/CMSSW_9_2_6/src/PandaProd/Producer/cfg/file_lists2017/data/MET.txt',
@@ -167,6 +181,7 @@ if __name__ == '__main__':
                         ])
             
         ''' 	
+        '''                 
 	###################################################
 	setdata("True")
 	###################################################
@@ -177,6 +192,7 @@ if __name__ == '__main__':
 			])
 	
         '''	
+        ''' 	
 	###################################################
 	setdata("True")
 	###################################################
