@@ -114,9 +114,22 @@ if __name__ == '__main__':
                                  for line in f:
                                    #print(line)
                                    config.Data.inputDataset = line
-                               # config.Data.inputDataset = ''.join(DatainputDataset) 
                                    print config.Data.inputDataset
                                    #config.Data.outputPrimaryDataset = split[-1].split('.')[0]
+                                   split_line = line.split('/')
+                                   if split_line[-1]=='MINIAOD':
+                                           config.Data.inputDataset = line
+                                           config.General.requestName = split[1]+'_'+split[2]
+                                   elif 'ext' in split[-2]:
+                                           ext = findall('ext[0-9]+',split[-2])
+                                           if len(ext)>0:
+                                                   config.General.requestName = split[1] + '_' + ext[0]
+                                           else:
+                                                   config.General.requestName = split[1]
+                                   else:
+                                           #private file
+                                           #config.General.requestName = split[1]
+                                           config.General.requestName = split[-1].split('.')[0]
                         else:
                                 config.Data.inputDataset = ll
                         if split[-1]=='MINIAOD':
@@ -133,11 +146,11 @@ if __name__ == '__main__':
                                 config.General.requestName = split[-1].split('.')[0]
                         submit(config)
 
-        '''                 
 	#############################################################################################
 	## From now on that's what users should modify: this is the a-la-CRAB2 configuration part. ##
 	#############################################################################################
  
+        '''                 
        ###################################################
         setdata("False")
         ###################################################
@@ -146,7 +159,7 @@ if __name__ == '__main__':
         
         setsignal("False")
         submitList([
-                        '/uscms_data/d3/naina25/Panda_2018/Panda_Prod/CMSSW_9_2_6/src/PandaProd/Producer/cfg/file_lists2017/mc/DYJetsToLL_HT.txt',
+                        '/uscms_data/d3/naina25/Panda_2018/Panda_Prod/CMSSW_9_2_6/src/PandaProd/Producer/cfg/file_lists2017/mc/80X/DYJetsToLL_HT.txt',
         ])
 
         '''                 
@@ -184,7 +197,7 @@ if __name__ == '__main__':
                         #'/uscms_data/d3/naina25/Panda_2018/Panda_Prod/CMSSW_9_2_6/src/PandaProd/Producer/cfg/file_lists2017/data/SinglePhoton.txt',
                         ])
             
-        ''' 	
+        '''                 
 	###################################################
 	setdata("True")
 	###################################################
