@@ -112,9 +112,8 @@ if __name__ == '__main__':
                         if split[1] == "uscms_data":
                                 with open(ll) as f:
                                  for line in f:
-                                   #print(line)
-                                   config.Data.inputDataset = line
-                                   #print config.Data.inputDataset
+                                   Line = line.strip(' \t\n\r')
+                                   config.Data.inputDataset = Line 
                                    split_line = line.split('/')
                                    print split_line[-2]
                                    if split_line[-1]=='MINIAOD':
