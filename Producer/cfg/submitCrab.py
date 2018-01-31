@@ -117,18 +117,20 @@ if __name__ == '__main__':
                                    print config.Data.inputDataset
                                    #config.Data.outputPrimaryDataset = split[-1].split('.')[0]
                                    split_line = line.split('/')
+                                   #print split_line
                                    if split_line[-1]=='MINIAOD':
                                            config.General.requestName = split_line[1]+'_'+split_line[2]
-                                   elif 'ext' in split[-2]:
-                                           ext = findall('ext[0-9]+',split[-2])
+                                           print config.General.requestName
+                                   elif 'ext' in split_line[-2]:
+                                           ext = findall('ext[0-9]+',split_line[-2])
                                            if len(ext)>0:
-                                                   config.General.requestName = split[1] + '_' + ext[0]
+                                                   config.General.requestName = split_line[1] + '_' + ext[0]
                                            else:
-                                                   config.General.requestName = split[1]
+                                                   config.General.requestName = split_line[1]
                                    else:
                                            #private file
                                            #config.General.requestName = split[1]
-                                           config.General.requestName = split[-1].split('.')[0]
+                                           config.General.requestName = split_line[-1].split('.')[0]
                         else:
                                 config.Data.inputDataset = ll
                         if split[-1]=='MINIAOD':
