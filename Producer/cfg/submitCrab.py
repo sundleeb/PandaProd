@@ -118,7 +118,7 @@ if __name__ == '__main__':
                                    #config.Data.outputPrimaryDataset = split[-1].split('.')[0]
                                    split_line = line.split('/')
                                    if split_line[-1]=='MINIAOD':
-                                           config.General.requestName = split[1]+'_'+split[2]
+                                           config.General.requestName = split_line[1]+'_'+split_line[2]
                                    elif 'ext' in split[-2]:
                                            ext = findall('ext[0-9]+',split[-2])
                                            if len(ext)>0:
