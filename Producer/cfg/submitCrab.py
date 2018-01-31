@@ -113,7 +113,7 @@ if __name__ == '__main__':
                                 with open(ll) as f:
                                  for line in f:
                                    #print(line)
-                                   config.Data.inputDataset = line\
+                                   config.Data.inputDataset = line
                                    #print config.Data.inputDataset
                                    split_line = line.split('/')
                                    print split_line[-2]
