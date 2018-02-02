@@ -113,10 +113,8 @@ if __name__ == '__main__':
                                 with open(ll) as f:
                                  for line in f:
                                      Line = line.strip(' \t\n\r')
-                                     print Line
                                      config.Data.inputDataset = Line 
                                      split_line = line.split('/')
-                                     #print split_line[-2]
                                      if split_line[-1]=='MINIAOD':
                                              config.General.requestName = split_line[1]+'_'+split_line[2]
                                      elif 'ext' in split_line[-2]:
@@ -127,8 +125,8 @@ if __name__ == '__main__':
                                                      config.General.requestName = split_line[1]
                                      else:
                                              #private file
-                                             #config.General.requestName = split[1]
-                                             config.General.requestName = split_line[-1].split('.')[0]
+                                             config.General.requestName = split_line[1]+'_'+split_line[2]
+                                             #config.General.requestName = split_line[-1].split('.')[0]
                                      submit(config)
                         else:
                                 config.Data.inputDataset = ll
@@ -144,7 +142,7 @@ if __name__ == '__main__':
                                 #private file
                                 #config.General.requestName = split[1]
                                 config.General.requestName = split[-1].split('.')[0]
-                        submit(config)
+                        #submit(config)
 
 	#############################################################################################
 	## From now on that's what users should modify: this is the a-la-CRAB2 configuration part. ##
@@ -193,7 +191,7 @@ if __name__ == '__main__':
 
         submitList([
                         #'/uscms_data/d3/naina25/Panda_2018/Panda_Prod/CMSSW_9_2_6/src/PandaProd/Producer/cfg/file_lists2017/data/MET.txt',
-                        #'/uscms_data/d3/naina25/Panda_2018/Panda_Prod/CMSSW_9_2_6/src/PandaProd/Producer/cfg/file_lists2017/data/SingleElectron.txt',
+                        '/uscms_data/d3/naina25/Panda_2018/Panda_Prod/CMSSW_9_2_6/src/PandaProd/Producer/cfg/file_lists2017/data/SingleElectron.txt',
                         #'/uscms_data/d3/naina25/Panda_2018/Panda_Prod/CMSSW_9_2_6/src/PandaProd/Producer/cfg/file_lists2017/data/SingleMuon.txt',
                         '/uscms_data/d3/naina25/Panda_2018/Panda_Prod/CMSSW_9_2_6/src/PandaProd/Producer/cfg/file_lists2017/data/SinglePhoton.txt',
                         ])
