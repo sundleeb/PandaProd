@@ -43,7 +43,7 @@ config.Data.unitsPerJob = 10
 config.Data.totalUnits = -1
 
 config.Site.storageSite = 'T3_US_FNALLPC' 
-config.Data.outLFNDirBase = '/store/user/shoh/pandaprod/80X' #Please change USER to yours
+config.Data.outLFNDirBase = '/store/user/sundleeb/pandaprod/80X' #Please change USER to yours
 config.Data.publication = False
 config.Data.outputDatasetTag ='PandA'
 
@@ -181,9 +181,10 @@ if __name__ == '__main__':
 	###################################################
 	
 	config.Data.splitting = 'EventAwareLumiBased'
-	config.Data.unitsPerJob = 40000
+	config.Data.unitsPerJob = 4000
 	submitList([
-			'/TTbarDMJets_pseudoscalar_Mchi-1_Mphi-100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6_ext1-v1/MINIAODSIM',
+                        '/WRToNuMuToMuMuJJ_MW-4000_MNu-2000_TuneCUETP8M1_13TeV-pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/MINIAODSIM'
+			#'/TTbarDMJets_pseudoscalar_Mchi-1_Mphi-100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6_ext1-v1/MINIAODSIM',
 	])
 	
 	'''
